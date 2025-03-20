@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
@@ -31,7 +30,7 @@ jobs:
           dotnet restore MyFashionShop.Web/MyFashionShop.Web.csproj
           dotnet build MyFashionShop.Web/MyFashionShop.Web.csproj --configuration Release
           dotnet publish MyFashionShop.Web/MyFashionShop.Web.csproj -c Release -o MyFashionShop.Web/bin/Release/net8.0/publish
-          
+
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -40,7 +39,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations #####
-          app_location: "MyFashionShop.Web" # Correct directory 
+          app_location: "MyFashionShop.Web"  # Ensure this is the correct directory
           api_location: "" # Leave empty if no API
           output_location: "MyFashionShop.Web/bin/Release/net8.0/publish"  
           ###### End of Repository/Build Configurations ######
