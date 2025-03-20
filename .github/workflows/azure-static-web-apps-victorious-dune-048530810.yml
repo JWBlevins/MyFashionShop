@@ -29,7 +29,7 @@ jobs:
           ###### Repository/Build Configuarations. #####
           app_location: "MyFashionShop.Web" # Correct directory 
           api_location: "" # Leave empty if no API
-          output_location: "" # Build app content directory (if applicable)   
+          output_location: "MyFashionShop.Web/bin/Release/net8.0/publish"  
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
