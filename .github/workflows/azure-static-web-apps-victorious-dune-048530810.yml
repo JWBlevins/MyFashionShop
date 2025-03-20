@@ -27,7 +27,7 @@ jobs:
           
       - name: Build and Publish
         run: |
-          dotnet restore MyFashionShop.Web/MyFashionShop.Web.csproj
+          dotnet restore MyFashionShop.Web/MyFashionShop.Web/MyFashionShop.Web.csproj
           dotnet build MyFashionShop.Web/MyFashionShop.Web.csproj --configuration Release
           dotnet publish MyFashionShop.Web/MyFashionShop.Web.csproj -c Release -o MyFashionShop.Web/bin/Release/net8.0/publish
 
