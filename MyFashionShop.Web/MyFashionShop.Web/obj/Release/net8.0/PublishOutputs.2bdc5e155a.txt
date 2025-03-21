@@ -1,0 +1,7 @@
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\MyFashionShop.Web.exe
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\appsettings.json
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\MyFashionShop.Web.dll
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\MyFashionShop.Web.deps.json
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\MyFashionShop.Web.runtimeconfig.json
+C:\Users\jblev\source\repos\MyFashionShop.Web\bin\Release\net8.0\publish\MyFashionShop.Web.pdb
