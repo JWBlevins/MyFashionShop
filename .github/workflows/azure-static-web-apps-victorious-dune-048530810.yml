@@ -32,10 +32,10 @@ jobs:
           
       - name: Build and Publish
         run: |
-           cd MyFashionShop/MyFashionShop.Web.ApiService
-           dotnet restore MyFashionShop.Web.ApiService.csproj
-           dotnet build MyFashionShop.Web.ApiService.csproj --configuration Release
-           dotnet publish MyFashionShop.Web.ApiService.csproj -c Release -o bin/Release/net8.0/publish        
+           cd MyFashionShop.Web  # Ensure this is the correct folder
+           dotnet restore
+           dotnet build --configuration Release
+           dotnet publish -c Release -o bin/Release/net8.0/publish        
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
