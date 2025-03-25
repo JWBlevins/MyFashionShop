@@ -27,18 +27,19 @@ jobs:
 
       - name: Build and Publish
         run: |
-          dotnet restore MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
-          dotnet build MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
-          dotnet publish MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
-          ls -R MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish # Check if the directory exists
+          dotnet restore MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
+          dotnet build MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
+          dotnet publish MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
+          ls -R MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
 
       - name: Verify Publish Directory
         run: |
-          if [ ! -d "MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish" ]; then
-            echo "Publish directory does not exist!"
+          if [ ! -d "MyFashionShop.Web.ApiService/bin/Release/net8.0/publish" ]; then
+            echo "ERROR: Publish directory does not exist!"
             exit 1
           fi
-          ls -R MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
+          echo "Publish directory exists and looks good!"
+          ls -R MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
@@ -47,8 +48,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "MyFashionShop/MyFashionShop.Web.ApiService"
-          output_location: "MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"
+          app_location: "MyFashionShop.Web.ApiService"
+          output_location: "MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -60,7 +61,4 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
-          action: "close"          
-
-          
-          
+          action: "close"
