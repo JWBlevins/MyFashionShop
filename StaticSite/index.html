@@ -2,147 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MyFashionShop</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
 
-    header {
-      background-color: #004080;
-      color: white;
+    h1 {
       text-align: center;
-      padding: 1rem 0;
-      font-size: 2rem;
+      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 40px;
     }
 
-    h2 {
-      text-align: center;
-      margin: 2rem 0 1rem;
-    }
-
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
-      padding: 0 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .card {
-      background: white;
-      border-radius: 10px;
-      width: 250px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: 12px;
       padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     .card img {
       max-width: 100%;
-      height: 200px;
-      object-fit: contain;
-      border-radius: 5px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
 
-    .card h3 {
-      margin: 15px 0 5px;
+    .card h2 {
+      font-size: 1.1em;
+      margin: 10px 0 5px;
     }
 
-    .price {
+    .card p {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card .price {
       font-weight: bold;
-      color: #004080;
-      margin: 10px 0;
+      color: #1a73e8;
+      margin-bottom: 10px;
     }
 
-    .btn {
+    .card a {
       display: inline-block;
-      padding: 10px 15px;
-      background-color: #0077cc;
+      background-color: #1a73e8;
       color: white;
-      text-decoration: none;
+      padding: 10px 15px;
       border-radius: 5px;
-      margin-top: 10px;
+      text-decoration: none;
     }
 
-    .btn:hover {
-      background-color: #005fa3;
+    .card a:hover {
+      background-color: #145db2;
     }
   </style>
 </head>
 <body>
-  <header>MyFashionShop</header>
+  <h1>🛒 Top Fashion Picks</h1>
 
-  <h2>Top Fashion Picks</h2>
-
-  <div class="product-grid">
+  <div class="grid">
+    <!-- Ray-Ban -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/41FVO9LCM3L._AC_SX500_.jpg" alt="Ray-Ban RB3364">
-      <h3>Ray-Ban RB3364 Sunglasses</h3>
+      <img src="https://m.media-amazon.com/images/I/41FVO9LCM3L._AC_SX500_.jpg" alt="Ray-Ban Sunglasses" />
+      <h2>Ray-Ban RB3364 Sunglasses</h2>
       <p>Metal Polarized Rectangular Sunglasses</p>
-      <p class="price">$129.99</p>
-      <a class="btn" href="https://amzn.to/4icKJrm" target="_blank">Buy on Amazon</a>
+      <div class="price">$129.99</div>
+      <a href="https://amzn.to/4icKJrm" target="_blank">Buy on Amazon</a>
     </div>
 
+    <!-- Goldady Jacket -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61uzK6F-bxL._AC_SY679_.jpg" alt="Goldady Jacket">
-      <h3>Goldady Puffer Jacket</h3>
+      <img src="https://m.media-amazon.com/images/I/61uzK6F-bxL._AC_SY679_.jpg" alt="Goldady Puffer Jacket" />
+      <h2>Goldady Puffer Jacket</h2>
       <p>Waterproof Long Puffer Jacket, Warm Winter Coat</p>
-      <p class="price">$89.99</p>
-      <a class="btn" href="https://amzn.to/4i1HqU0" target="_blank">Buy on Amazon</a>
+      <div class="price">$89.99</div>
+      <a href="https://amzn.to/4i1HqU0" target="_blank">Buy on Amazon</a>
     </div>
 
+    <!-- Winter Jacket -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61MnZK7XM3L._AC_SX679_.jpg" alt="Winter Jacket">
-      <h3>Winter Jacket</h3>
+      <img src="https://m.media-amazon.com/images/I/71Dic-17X+L._AC_SY606_.jpg" alt="Winter Jacket" />
+      <h2>Winter Jacket</h2>
       <p>Stylish and warm winter jacket</p>
-      <p class="price">$79.99</p>
-      <a class="btn" href="https://amzn.to/3XnU9Z4" target="_blank">Buy on Amazon</a>
+      <div class="price">$79.99</div>
+      <a href="https://amzn.to/3XnU9Z4" target="_blank">Buy on Amazon</a>
     </div>
 
+    <!-- Sport Leggings -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71oiwxSrh6L._AC_SY679_.jpg" alt="Sport Leggings">
-      <h3>Sport Leggings</h3>
+      <img src="https://m.media-amazon.com/images/I/71oiwxSrh6L._AC_SY679_.jpg" alt="Sport Leggings" />
+      <h2>Sport Leggings</h2>
       <p>Women’s high-waist leggings for gym and yoga</p>
-      <p class="price">$39.99</p>
-      <a class="btn" href="https://amzn.to/3D47leG" target="_blank">Buy on Amazon</a>
+      <div class="price">$39.99</div>
+      <a href="https://amzn.to/3D47leG" target="_blank">Buy on Amazon</a>
     </div>
 
+    <!-- Hoka Sneakers -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61pnviw3B+L._AC_SX625_.jpg" alt="Hoka Sneakers">
-      <h3>Hoka One One Sneakers</h3>
+      <img src="https://m.media-amazon.com/images/I/61pnviw3B+L._AC_SX625_.jpg" alt="Hoka One One Sneakers" />
+      <h2>Hoka One One Sneakers</h2>
       <p>Women’s low-top running sneakers</p>
-      <p class="price">$139.99</p>
-      <a class="btn" href="https://amzn.to/4ijdGBO" target="_blank">Buy on Amazon</a>
+      <div class="price">$139.99</div>
+      <a href="https://amzn.to/4ijdGBO" target="_blank">Buy on Amazon</a>
     </div>
 
+    <!-- Nike Shoes -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71b8ZKn1TpL._AC_SX500_.jpg" alt="Nike Running Shoes">
-      <h3>Nike Running Shoes</h3>
+      <img src="https://m.media-amazon.com/images/I/71b8ZKn1TpL._AC_SX500_.jpg" alt="Nike Running Shoes" />
+      <h2>Nike Running Shoes</h2>
       <p>Lightweight and durable running shoes</p>
-      <p class="price">$99.99</p>
-      <a class="btn" href="https://amzn.to/43rvtCO" target="_blank">Buy on Amazon</a>
+      <div class="price">$99.99</div>
+      <a href="https://amzn.to/43rvtCO" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- NEW: Men's Joggers -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61QsLCOBvLL._AC_SX679_.jpg" alt="Men's Joggers" />
+      <h2>Men's Joggers</h2>
+      <p>Comfy, lightweight jogger pants</p>
+      <div class="price">$44.99</div>
+      <a href="https://amzn.to/4I35MyC" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- NEW: Men’s Stretch Pants -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61OUJ3CZQtL._AC_SY606_.jpg" alt="Stretch Pants" />
+      <h2>Stretch Pants</h2>
+      <p>Men’s slim stretch fit, versatile for work or casual</p>
+      <div class="price">$49.99</div>
+      <a href="https://amzn.to/423VVzM" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- NEW: Women's Button-Up Shirt -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/6173JgMkeoL._AC_SX466_.jpg" alt="Button-Up Shirt" />
+      <h2>Button-Up Shirt</h2>
+      <p>Adjustable, lightweight, ideal for layering</p>
+      <div class="price">$36.99</div>
+      <a href="https://amzn.to/4hR1E1Y" target="_blank">Buy on Amazon</a>
     </div>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
