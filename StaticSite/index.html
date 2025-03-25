@@ -7,136 +7,140 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
     }
-
     header {
-      background-color: #1f3c88;
+      background-color: #1a3b8b;
       color: white;
-      padding: 20px;
+      padding: 1rem;
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
     }
-
     .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
     }
-
     .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: 16px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      margin: 1rem;
       text-align: center;
+      padding: 1rem;
     }
-
     .card img {
       max-width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
+      height: 250px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
     }
-
     .card h3 {
-      margin: 10px 0 5px;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
     }
-
     .card p {
-      margin: 6px 0;
+      font-size: 0.9rem;
+      color: #555;
     }
-
-    .btn {
+    .card .price {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .card a {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 16px;
-      background-color: #0070f3;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: bold;
     }
-
-    .btn:hover {
-      background-color: #005bb5;
+    .card a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-
   <header>MyFashionShop - Top Picks</header>
-
   <div class="container">
 
     <!-- Ray-Ban Sunglasses -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/41FVO9LCM3L._AC_SX500_.jpg" alt="Ray-Ban RB3364 Sunglasses">
+      <img src="https://m.media-amazon.com/images/I/51whAmN8fBL._AC_SX500_.jpg" alt="Ray-Ban Sunglasses" />
       <h3>Ray-Ban RB3364 Sunglasses</h3>
       <p>Metal Polarized Rectangular Sunglasses</p>
-      <p><strong>$129.99</strong></p>
-      <a href="https://amzn.to/4icKJrm" target="_blank" class="btn">Buy on Amazon</a>
+      <div class="price">$129.99</div>
+      <a href="https://amzn.to/4iW8VhM" target="_blank">Buy on Amazon</a>
     </div>
 
     <!-- Goldady Puffer Jacket -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61uzK6F-bxL._AC_SY679_.jpg" alt="Goldady Puffer Jacket">
+      <img src="https://m.media-amazon.com/images/I/61uzK6F-bxL._AC_SY679_.jpg" alt="Goldady Jacket" />
       <h3>Goldady Puffer Jacket</h3>
       <p>Waterproof Long Puffer Jacket, Warm Winter Coat</p>
-      <p><strong>$89.99</strong></p>
-      <a href="https://amzn.to/4i1HqU0" target="_blank" class="btn">Buy on Amazon</a>
+      <div class="price">$89.99</div>
+      <a href="https://amzn.to/4i1HqU0" target="_blank">Buy on Amazon</a>
     </div>
 
     <!-- Winter Jacket -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71Dic-17X+L._AC_SY606_.jpg" alt="Winter Jacket">
+      <img src="https://m.media-amazon.com/images/I/71Dic-17X+L._AC_SY606_.jpg" alt="Winter Jacket" />
       <h3>Winter Jacket</h3>
       <p>Stylish and warm winter jacket</p>
-      <p><strong>$79.99</strong></p>
-      <a href="https://amzn.to/3XnU9Z4" target="_blank" class="btn">Buy on Amazon</a>
+      <div class="price">$79.99</div>
+      <a href="https://amzn.to/3XnU9Z4" target="_blank">Buy on Amazon</a>
     </div>
 
     <!-- Sport Leggings -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71oiwxSrh6L._AC_SY679_.jpg" alt="Sport Leggings">
+      <img src="https://m.media-amazon.com/images/I/71oiwxSrh6L._AC_SY679_.jpg" alt="Sport Leggings" />
       <h3>Sport Leggings</h3>
       <p>Women’s high-waist leggings for gym and yoga</p>
-      <p><strong>$39.99</strong></p>
-      <a href="https://amzn.to/3D47leG" target="_blank" class="btn">Buy on Amazon</a>
+      <div class="price">$39.99</div>
+      <a href="https://amzn.to/3D47leG" target="_blank">Buy on Amazon</a>
     </div>
 
-    <!-- Hoka One One Sneakers -->
+    <!-- Hoka Sneakers -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61pnviw3B+L._AC_SX625_.jpg" alt="Hoka One One Sneakers">
+      <img src="https://m.media-amazon.com/images/I/61pnviw3B+L._AC_SX625_.jpg" alt="Hoka Sneakers" />
       <h3>Hoka One One Sneakers</h3>
-      <p>Women’s low-top running sneakers</p>
-      <p><strong>$139.99</strong></p>
-      <a href="https://amzn.to/4ijdGBO" target="_blank" class="btn">Buy on Amazon</a>
-    </div>
-
-    <!-- Nike Running Shoes -->
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71BVWzYELTL._AC_SY535_.jpg" alt="Nike Running Shoes">
-      <h3>Nike Running Shoes</h3>
-      <p>Lightweight and durable running shoes</p>
-      <p><strong>$99.99</strong></p>
-      <a href="https://amzn.to/3DTAEAO" target="_blank" class="btn">Buy on Amazon</a>
+      <p>Women's low-top running sneakers</p>
+      <div class="price">$139.99</div>
+      <a href="https://amzn.to/4ijdGBO" target="_blank">Buy on Amazon</a>
     </div>
 
     <!-- Women's Black Shirt -->
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/6173JgMkeoL._AC_SX466_.jpg" alt="Women's Black Shirt">
+      <img src="https://m.media-amazon.com/images/I/51NdnIqq-zL._AC_SX466_.jpg" alt="Women's Shirt" />
       <h3>Women's Activewear Shirt</h3>
       <p>Breathable and stylish button-up shirt for gym or casual</p>
-      <p><strong>$39.99</strong></p>
-      <a href="https://amzn.to/4hR1E1Y" target="_blank" class="btn">Buy on Amazon</a>
+      <div class="price">$33.99</div>
+      <a href="https://amzn.to/3QO1xdW" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- Extra Leggings -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71jU2QpxYyL._AC_SX466_.jpg" alt="High-Waist Leggings" />
+      <h3>High-Waist Leggings</h3>
+      <p>Stylish, stretchy leggings with side pocket</p>
+      <div class="price">$34.99</div>
+      <a href="https://amzn.to/3QO1xdW" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- Men's Golf Pants -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/717MUCI3gOL._AC_SX522_.jpg" alt="Golf Pants" />
+      <h3>Men’s Stretch Golf Pants</h3>
+      <p>Slim fit, moisture-wicking, performance golf trousers</p>
+      <div class="price">$49.99</div>
+      <a href="https://amzn.to/3FHo9ZK" target="_blank">Buy on Amazon</a>
     </div>
 
   </div>
-
 </body>
 </html>
