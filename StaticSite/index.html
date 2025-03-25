@@ -3,122 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyFashionShop - Affiliate Deals</title>
+  <title>MyFashionShop</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      margin: 0;
+      padding: 0;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .product {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .product:hover {
-      transform: scale(1.02);
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-    .product h2 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0 0.3rem;
-    }
-    .product p {
-      font-size: 0.9rem;
-    }
-    .product .price {
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: #0078d4;
-    }
-    .product a {
-      display: inline-block;
-      margin-top: 0.7rem;
-      padding: 0.5rem 1rem;
-      background: #0078d4;
+
+    header {
+      background-color: #004080;
       color: white;
-      border-radius: 4px;
-      text-decoration: none;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 2rem;
     }
-    .product a:hover {
-      background: #005fa3;
+
+    h2 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #004080;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
     }
   </style>
 </head>
 <body>
+  <header>MyFashionShop</header>
 
-  <h1>Top Fashion Picks</h1>
+  <h2>Top Fashion Picks</h2>
 
-  <div class="grid">
-
-    <div class="product">
-      <img src="https://example.com/rayban.jpg" alt="Ray-Ban Sunglasses">
-      <h2>Ray-Ban RB3364 Sunglasses</h2>
+  <div class="product-grid">
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/41FVO9LCM3L._AC_SX500_.jpg" alt="Ray-Ban RB3364">
+      <h3>Ray-Ban RB3364 Sunglasses</h3>
       <p>Metal Polarized Rectangular Sunglasses</p>
       <p class="price">$129.99</p>
-      <a href="https://amzn.to/4icKJrm" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/4icKJrm" target="_blank">Buy on Amazon</a>
     </div>
 
-    <div class="product">
-      <img src="https://example.com/puffer.jpg" alt="Goldady Jacket">
-      <h2>Goldady Puffer Jacket</h2>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61uzK6F-bxL._AC_SY679_.jpg" alt="Goldady Jacket">
+      <h3>Goldady Puffer Jacket</h3>
       <p>Waterproof Long Puffer Jacket, Warm Winter Coat</p>
       <p class="price">$89.99</p>
-      <a href="https://amzn.to/4i1HqU0" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/4i1HqU0" target="_blank">Buy on Amazon</a>
     </div>
 
-    <div class="product">
-      <img src="https://example.com/winterjacket.jpg" alt="Winter Jacket">
-      <h2>Winter Jacket</h2>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61MnZK7XM3L._AC_SX679_.jpg" alt="Winter Jacket">
+      <h3>Winter Jacket</h3>
       <p>Stylish and warm winter jacket</p>
       <p class="price">$79.99</p>
-      <a href="https://amzn.to/3XnU9Z4" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/3XnU9Z4" target="_blank">Buy on Amazon</a>
     </div>
 
-    <div class="product">
-      <img src="https://example.com/leggings.jpg" alt="Sport Leggings">
-      <h2>Sport Leggings</h2>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71oiwxSrh6L._AC_SY679_.jpg" alt="Sport Leggings">
+      <h3>Sport Leggings</h3>
       <p>Women’s high-waist leggings for gym and yoga</p>
       <p class="price">$39.99</p>
-      <a href="https://amzn.to/3D47leG" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/3D47leG" target="_blank">Buy on Amazon</a>
     </div>
 
-    <div class="product">
-      <img src="https://example.com/sneakers.jpg" alt="Hoka Sneakers">
-      <h2>Hoka One One Sneakers</h2>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61pnviw3B+L._AC_SX625_.jpg" alt="Hoka Sneakers">
+      <h3>Hoka One One Sneakers</h3>
       <p>Women’s low-top running sneakers</p>
       <p class="price">$139.99</p>
-      <a href="https://amzn.to/4ijdGBO" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/4ijdGBO" target="_blank">Buy on Amazon</a>
     </div>
 
-    <div class="product">
-      <img src="https://example.com/nike.jpg" alt="Nike Shoes">
-      <h2>Nike Running Shoes</h2>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71b8ZKn1TpL._AC_SX500_.jpg" alt="Nike Running Shoes">
+      <h3>Nike Running Shoes</h3>
       <p>Lightweight and durable running shoes</p>
       <p class="price">$99.99</p>
-      <a href="#" target="_blank">Buy on Amazon</a>
+      <a class="btn" href="https://amzn.to/43rvtCO" target="_blank">Buy on Amazon</a>
     </div>
-
   </div>
-
 </body>
 </html>
+
 
 
 
