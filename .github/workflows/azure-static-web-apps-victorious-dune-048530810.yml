@@ -32,9 +32,9 @@ jobs:
 
       - name: Build and Publish
         run: |
-          dotnet restore path/to/actual.csproj
-          dotnet build path/to/actual.csproj --configuration Release
-          dotnet publish path/to/actual.csproj -c Release -o path/to/output
+          dotnet restore MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
+          dotnet build MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
+          dotnet publish MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
