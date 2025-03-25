@@ -32,9 +32,9 @@ jobs:
           
       - name: Build and Publish
         run: |
-         dotnet restore MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
-         dotnet build MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release 
-         dotnet publish MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop.Web.ApiService/bin/Release/net8.0/publish       
+         dotnet restore MyFashionShop.Web/MyFashionShop.Web.csproj
+         dotnet build MyFashionShop.Web/MyFashionShop.Web.csproj --configuration Release
+         dotnet publish MyFashionShop.Web/MyFashionShop.Web.csproj -c Release -o MyFashionShop.Web/bin/Release/net8.0/publish       
                  
 
       - name: Deploy to Azure Static Web Apps
@@ -45,9 +45,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           ###### Repository/Build Configurations #####
-          app_location: "MyFashionShop.Web.ApiService"
+          app_location: "MyFashionShop.Web"
           api_location: "" # Leave empty if no API
-          output_location: "MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"  
+          output_location: "MyFashionShop.Web/bin/Release/net8.0/publish"  
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
