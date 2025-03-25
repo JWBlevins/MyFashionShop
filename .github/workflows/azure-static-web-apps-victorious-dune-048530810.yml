@@ -20,11 +20,6 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Debug - Check Working Directory
-        run: |
-          pwd
-          ls -R
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
@@ -36,6 +31,14 @@ jobs:
           dotnet build MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
           dotnet publish MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
           ls -R MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish # Check if the directory exists
+
+      - name: Verify Publish Directory
+        run: |
+          if [ ! -d "MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish" ]; then
+            echo "Publish directory does not exist!"
+            exit 1
+          fi
+          ls -R MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
@@ -58,9 +61,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
           action: "close"          
-          
-          
-          
 
           
           
