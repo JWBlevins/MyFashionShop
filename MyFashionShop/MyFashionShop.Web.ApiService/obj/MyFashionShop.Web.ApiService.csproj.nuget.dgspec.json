@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj": {}
+    "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj": {
+    "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
+        "projectUniqueName": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
         "projectName": "MyFashionShop.Web.ApiService",
-        "projectPath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
+        "projectPath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
         "packagesPath": "C:\\Users\\jblev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\obj\\",
+        "outputPath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -72,6 +72,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

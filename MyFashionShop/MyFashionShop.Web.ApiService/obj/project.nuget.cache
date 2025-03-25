@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CO8AQm/uaCA=",
+  "dgSpecHash": "sRFzjeRqbGI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
+  "projectFilePath": "C:\\Users\\jblev\\source\\repos\\MyFashionShop\\MyFashionShop\\MyFashionShop.Web.ApiService\\MyFashionShop.Web.ApiService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jblev\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\jblev\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
