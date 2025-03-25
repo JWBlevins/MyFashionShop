@@ -32,22 +32,22 @@ jobs:
           
       - name: Build and Publish
         run: |
-           cd MyFashionShop.Web  # Ensure this is the correct folder
-           dotnet restore
-           dotnet build --configuration Release
-           dotnet publish -c Release -o bin/Release/net8.0/publish        
+         dotnet restore MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
+         dotnet build MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release 
+         dotnet publish MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop.Web.ApiService/bin/Release/net8.0/publish       
+                 
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           ###### Repository/Build Configurations #####
-          app_location: "MyFashionShop.Web"  # Ensure this is the correct directory
+          app_location: "MyFashionShop.Web.ApiService"
           api_location: "" # Leave empty if no API
-          output_location: "MyFashionShop.Web/bin/Release/net8.0/publish"  
+          output_location: "MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"  
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
