@@ -32,9 +32,9 @@ jobs:
 
       - name: Build and Publish
         run: |
-          dotnet restore MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
-          dotnet build MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release 
-          dotnet publish MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
+          dotnet restore MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
+          dotnet build MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
+          dotnet publish MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
 
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
@@ -43,8 +43,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "MyFashionShop.Web.ApiService"
-          output_location: "MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"
+          app_location: "MyFashionShop/MyFashionShop.Web.ApiService"
+          output_location: "MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -57,7 +57,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
           action: "close"
-         
+
           
           
           
