@@ -1,0 +1,66 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+
+      - name: Debug - Check Working Directory
+        run: |
+          pwd
+          ls -R
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build and Publish
+        run: |
+          dotnet restore MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj
+          dotnet build MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj --configuration Release
+          dotnet publish MyFashionShop/MyFashionShop.Web.ApiService/MyFashionShop.Web.ApiService.csproj -c Release -o MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish
+          ls -R MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish # Check if the directory exists
+
+      - name: Deploy to Azure Static Web Apps
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "MyFashionShop/MyFashionShop.Web.ApiService"
+          output_location: "MyFashionShop/MyFashionShop.Web.ApiService/bin/Release/net8.0/publish"
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_DUNE_048530810 }}
+          action: "close"          
+          
+          
+          
+
+          
+          
